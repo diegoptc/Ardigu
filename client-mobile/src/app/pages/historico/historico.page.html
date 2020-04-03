@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-title>Histórico de agendamentos</ion-title>
+    <ion-button slot="end" (click)="logOut()">
+      <ion-icon name="log-out"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Definições: Aprovado, reprovado ou pendente
+    </ion-list-header>
+    <ion-item *ngFor='let h of historico'>
+      <ion-label class='text-wrap'>
+        <h2 
+          style='text-transform: capitalize;'
+          [ngClass]='{
+            "pendente": h.data.situacao === "pendente",
+            "aprovado": h.data.situacao === "aprovado",
+            "reprovado": h.data.situacao == "reprovado"
+          }'
+        >{{h.data.situacao}}</h2>
+        <h3>{{h.data.data}} às {{h.data.horario}}</h3>
+        <p style='white-space: normal;'>Motivo informado: "{{h.data.motivo}}"</p>
+        <ion-button *ngIf='h.data.situacao === "pendente"' color='danger' (click)='cancelarAgendamento(h.key)'>Cancelar</ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

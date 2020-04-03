@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-icon class='background-icon' name='md-contacts'></ion-icon>
+  <ion-item text-center>
+    <ion-label>ARDIGU</ion-label>
+  </ion-item>
+</ion-content>
+<ion-toolbar>
+  <ion-button expand="block" (click)="logOut()">
+    <ion-label>Sair</ion-label>
+  </ion-button>
+</ion-toolbar>
+<ion-tabs>
+  <ion-tab-bar slot='bottom'>
+    <ion-tab-button tab='agendamento'>
+      <ion-icon name='md-add-circle'></ion-icon>
+      <ion-label>Socilitar</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab='mensagem'>
+      <ion-icon name='md-chatbubbles'></ion-icon>
+      <ion-label>Mensagens</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab='historico'>
+      <ion-icon name='md-calendar'></ion-icon>
+      <ion-label>Histórico</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

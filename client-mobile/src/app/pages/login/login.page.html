@@ -1,0 +1,17 @@
+<ion-grid>
+  <ion-row justify-content-center>
+    <ion-col align-self-center size-md='6' size-lg='5' size-xs='12'>
+      <div text-center>
+        <h4>ARDIGU</h4>
+      </div>
+      <div>
+        <ion-item>
+          <ion-input [brmasker]='cpfMask' [(ngModel)]='cpf' maxlength='14' type='tel' placeholder='Informe seu CPF (apenas números)'></ion-input>
+        </ion-item>
+      </div>
+      <div>
+        <ion-button size='default' expand='block' value='' (click)='consultarCPF()'>Entrar</ion-button>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

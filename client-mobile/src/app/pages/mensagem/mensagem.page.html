@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-title>Mensagens do consultório</ion-title>
+    <ion-button slot="end" (click)="logOut()">
+      <ion-icon name="log-out"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngFor='let mensagem of mensagens'>
+    <ion-item *ngIf='mensagem.data.situacao !== "pendente"'>
+      <ion-label class='text-wrap'>
+        <h3>
+          O agendamento da data 
+          <b>{{mensagem.data.data}}</b> às
+          <b>{{mensagem.data.horario}}</b> foi 
+          <b [className]='mensagem.data.situacao === "aprovado" ? "aprovado" : "reprovado"'>{{mensagem.data.situacao}}</b>.
+        </h3>
+        <p *ngIf='mensagem.data.mensagem != null'>Mensagem: "{{mensagem.data.mensagem}}"</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
